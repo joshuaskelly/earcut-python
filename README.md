@@ -16,7 +16,7 @@ Signature: `earcut(vertices[, holes, dimensions = 2])`.
 * `vertices` is a flat array of vertex coordinates like `[x0,y0, x1,y1, x2,y2, ...]`.
 * `holes` is an array of hole _indices_ if any
   (e.g. `[5, 8]` for a 12-vertex input would mean one hole with vertices 5&ndash;7 and another with 8&ndash;11).
-* `dimensions` is the number of coordinates per vertice in the input array (`2` by default).
+* `dimensions` is the number of coordinates per vertex in the input array (`2` by default).
 
 Each group of three vertex indices in the resulting array forms a triangle.
 
