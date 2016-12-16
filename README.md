@@ -1,6 +1,6 @@
 ## earcut-python
 
-A pure python port of the earcut JavaScript triangulation library. The latest version is based off of the earcut 2.1.1 release, and is functionally identical.
+A pure Python port of the earcut JavaScript triangulation library. The latest version is based off of the earcut 2.1.1 release, and is functionally identical.
 
 The original project can be found here:
 https://github.com/mapbox/earcut
@@ -13,12 +13,12 @@ triangles = earcut([10,0, 0,50, 60,60, 70,10]) # Returns [1,0,3, 3,2,1]
 
 Signature: `earcut(vertices[, holes, dimensions = 2])`.
 
-* `vertices` is a flat array of vertice coordinates like `[x0,y0, x1,y1, x2,y2, ...]`.
+* `vertices` is a flat array of vertex coordinates like `[x0,y0, x1,y1, x2,y2, ...]`.
 * `holes` is an array of hole _indices_ if any
-  (e.g. `[5, 8]` for a 12-vertice input would mean one hole with vertices 5&ndash;7 and another with 8&ndash;11).
+  (e.g. `[5, 8]` for a 12-vertex input would mean one hole with vertices 5&ndash;7 and another with 8&ndash;11).
 * `dimensions` is the number of coordinates per vertice in the input array (`2` by default).
 
-Each group of three vertice indices in the resulting array forms a triangle.
+Each group of three vertex indices in the resulting array forms a triangle.
 
 ```python
 # Triangulating a polygon with a hole
