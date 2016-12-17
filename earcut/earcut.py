@@ -71,7 +71,7 @@ def linkedList(data, start, end, dim, clockwise):
 
 
 # eliminate colinear or duplicate points
-def filterPoints(start, end):
+def filterPoints(start, end=None):
     if not start:
         return start
     if not end:
@@ -452,8 +452,8 @@ def sortLinked(_list):
 # z-order of a point given coords and size of the data bounding box
 def zOrder(x, y, minX, minY, size):
     # coords are transformed into non-negative 15-bit integer range
-    x = 32767 * (x - minX) / size
-    y = 32767 * (y - minY) / size
+    x = 32767 * (x - minX) // size
+    y = 32767 * (y - minY) // size
 
     x = (x | (x << 8)) & 0x00FF00FF
     x = (x | (x << 4)) & 0x0F0F0F0F
