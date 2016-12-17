@@ -36,7 +36,7 @@ If your input is a multi-dimensional array, you can convert it to the format exp
 
 ```python
 # The first sequence of vertices is treated as the outer hull, the following sequneces are treated as holes.
-data = earcut.flatten([[0,0, 100,0, 100,100, 0,100], [20,20, 80,20, 80,80, 20,80]])
+data = earcut.flatten([[(0,0), (100,0), (100,100), (0,100)], [(20,20), (80,20), (80,80), (20,80)]])
 triangles = earcut(data['vertices'], data['holes'], data['dimensions'])
 ```
 
