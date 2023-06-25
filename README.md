@@ -1,4 +1,4 @@
-## earcut-python
+## earcut-py
 
 A pure Python port of the earcut JavaScript triangulation library. The latest version is based off of the earcut 2.1.1 release, and is functionally identical.
 
