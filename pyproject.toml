@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "earcut-py"
+version = "0.1.0"
+description = "A pure Python port of the Earcut polygon triangulation library."
+authors = ["MIERUNE Inc. <info@mierune.co.jp>"]
+license = "ISC"
+readme = "README.md"
+packages = [{include = "earcut_py"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
