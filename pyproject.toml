@@ -5,7 +5,7 @@ description = "A pure Python port of the Earcut polygon triangulation library."
 authors = ["MIERUNE Inc. <info@mierune.co.jp>"]
 license = "ISC"
 readme = "README.md"
-packages = [{include = "earcut_py"}]
+packages = [{include = "earcut"}]
 
 [tool.poetry.dependencies]
 python = "^3.8"
