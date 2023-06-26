@@ -729,7 +729,7 @@ def removeNode(p):
 
 
 class Node:
-    __slot__ = ["i", "x", "y", "prev", "next", "z", "prevZ", "nextZ", "steiner"]
+    __slots__ = ["i", "x", "y", "prev", "next", "z", "prevZ", "nextZ", "steiner"]
     i: int
     x: float
     y: float
