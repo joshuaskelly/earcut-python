@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "earcut-py"
-version = "0.1.0"
+version = "0.2.0"
 description = "A pure Python port of the Earcut polygon triangulation library."
 authors = ["MIERUNE Inc. <info@mierune.co.jp>"]
 license = "ISC"
