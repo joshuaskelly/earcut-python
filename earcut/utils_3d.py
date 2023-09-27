@@ -18,7 +18,10 @@ def _project_to_2d(normal: np.ndarray, vertices: np.ndarray) -> np.ndarray:
     nx, ny = normal[:2]
     dd = (nx**2 + ny**2) ** 0.5
     if dd < 1e-8:
-        return vertices[:, :2]
+        if normal[2] > 0:
+            return vertices[:, :2]
+        else:
+            return vertices[:, (1, 0)]
     ax: float = -ny / dd
     ay: float = nx / dd
     theta = math.acos(normal[2])
