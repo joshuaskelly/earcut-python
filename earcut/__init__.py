@@ -1,4 +1,5 @@
 import math
+from dataclasses import dataclass
 from typing import Optional
 
 
@@ -103,8 +104,9 @@ def earcutLinked(ear, triangles, dim, minX, minY, invSize, _pass=0):
     while ear.prev != ear.next:
         prev = ear.prev
         next = ear.next
+        is_ear = isEarHashed(ear, minX, minY, invSize) if invSize else isEar(ear)
 
-        if isEarHashed(ear, minX, minY, invSize) if invSize else isEar(ear):
+        if is_ear:
             # cut off the triangle
             triangles.append(prev.i // dim)
             triangles.append(ear.i // dim)
@@ -728,6 +730,7 @@ def removeNode(p):
         p.nextZ.prevZ = p.prevZ
 
 
+@dataclass
 class Node:
     __slots__ = ["i", "x", "y", "prev", "next", "z", "prevZ", "nextZ", "steiner"]
     i: int
@@ -739,6 +742,14 @@ class Node:
     prevZ: Optional["Node"]
     nextZ: Optional["Node"]
     steiner: bool
+
+    def __str__(self):
+        return (
+            f"i={self.i} x={self.x} y={self.y} "
+            f"prev={bool(self.prev)} next={bool(self.next)} "
+            f"z={self.z} prevZ={bool(self.prevZ)} nextZ={bool(self.nextZ)} "
+            f"steiner={self.steiner}"
+        )
 
     def __init__(self, i, x, y):
         # vertex index in coordinates array
@@ -818,4 +829,4 @@ def flatten(data):
             holeIndex += len(data[i - 1])
             holes.append(holeIndex)
 
-    return {"vertices": vertices, "holes": holes, "dimensions": dim}
+    return (vertices, holes, dim)
