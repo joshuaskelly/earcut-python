@@ -13,6 +13,12 @@ python = "^3.8"
 [tool.poetry.group.dev.dependencies]
 pytest-cov = "^4.1.0"
 pytest = "^7.4.2"
+ruff = "^0.0.292"
+black = "^23.9.1"
+pyright = "^1.1.329"
+
+[tool.ruff]
+ignore = ["E501"]
 
 [build-system]
 requires = ["poetry-core"]
